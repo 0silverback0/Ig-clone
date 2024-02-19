@@ -3,6 +3,9 @@
     "name": "ig-clone",
     "slug": "ig-clone",
     "version": "1.0.0",
+    "permissions": [
+      "mediaLibrary"
+    ],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -15,16 +18,23 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.marzcodes.igclone"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.marzcodes.igclone"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4ad6fa5d-6463-4177-bf64-b80c451fd1bd"
+      }
     }
   }
 }

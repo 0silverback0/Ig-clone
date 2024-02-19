@@ -1,30 +1,84 @@
+import React from "react";
+import { StatusBar } from "react-native";
+import Posts from "./components/Posts";
+import Add from "./components/Add";
+import FullScreenVideo from "./components/FullScreenVideo";
+import SearchComponent from "./components/SearchComponent";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { AntDesign, FontAwesome, FontAwesome6 } from "@expo/vector-icons";
 
-import { StyleSheet, Text, View, StatusBar, Platform} from 'react-native';
-import  Header  from './components/Header';
-import Stories from './components/Stories';
-import Buttons from './components/Buttons';
-import Posts from './components/Posts';
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <StatusBar
-        backgroundColor='black'
-        barStyle="light-content"
-        translucent={Platform.OS === 'ios'} 
+    <NavigationContainer>
+      <StatusBar backgroundColor="black" barStyle="light-content" />
+      <Tab.Navigator
+        screenOptions={{ tabBarStyle: { backgroundColor: "black" } }}
+      >
+        <Tab.Screen
+          options={{
+            headerShown: false,
+            tabBarIcon: ({ color, size }) => (
+              <AntDesign name="home" size={24} color="white" />
+            ),
+            tabBarLabelStyle: { display: "none" },
+          }}
+          name="Home"
+          component={Posts}
         />
-     {/* <Header /> */}
-     {/* <Stories /> */}
-     <Posts />
-     <Buttons />
-    </View>
+
+        <Tab.Screen
+          options={{
+            headerShown: false,
+            tabBarIcon: ({ color, size }) => (
+              <FontAwesome name="search" size={24} color="white" />
+            ),
+            tabBarLabelStyle: { display: "none" },
+          }}
+          name="Search"
+          component={SearchComponent}
+        />
+
+        <Tab.Screen
+          options={{
+            headerShown: false,
+            tabBarIcon: ({ color, size }) => (
+              <FontAwesome6 name="add" size={24} color="white" />
+            ),
+            tabBarLabelStyle: { display: "none" },
+          }}
+          name="Add"
+          component={Add}
+        />
+
+        <Tab.Screen
+          options={{
+            headerShown: false,
+            tabBarIcon: ({ color, size }) => (
+              <FontAwesome6 name="video" size={24} color="white" />
+            ),
+            tabBarLabelStyle: { display: "none" },
+          }}
+          name="video"
+          component={FullScreenVideo}
+        />
+
+        <Tab.Screen
+          options={{
+            headerShown: false,
+            tabBarIcon: ({ color, size }) => (
+              <AntDesign name="profile" size={24} color="white" />
+            ),
+            tabBarLabelStyle: { display: "none" },
+          }}
+          name="profile"
+          component={""}
+        />
+      </Tab.Navigator>
+
+      {/* ÷<Buttons /> */}
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'black'
-  },
- 
-});

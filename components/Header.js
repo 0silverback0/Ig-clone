@@ -1,7 +1,6 @@
-// Header.js
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome'; // Adjust the import based on the icon library you choose
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 const Header = () => {
   return (
@@ -14,26 +13,26 @@ const Header = () => {
 };
 
 const styles = StyleSheet.create({
-    header: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      width: 420,
-      justifyContent: 'space-between',
-      backgroundColor: 'black',
-      paddingRight: 40,
-    },
-    headerText: {
-      color: 'white',
-      fontSize: 20,
-      fontWeight: 'bold',
-      padding: 40
-    },
-    iconsContainer: {
-      flexDirection: 'row',
-    },
-    icon: {
-      marginLeft: 10,
-    },
-  });
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    width: 420,
+    justifyContent: "space-between",
+    backgroundColor: "black",
+    paddingRight: 40,
+  },
+  headerText: {
+    color: "white",
+    fontSize: 20,
+    fontWeight: "bold",
+    padding: 40,
+  },
+  iconsContainer: {
+    flexDirection: "row",
+  },
+  icon: {
+    marginLeft: 10,
+  },
+});
 
 export default Header;
