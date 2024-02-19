@@ -39,3 +39,9 @@ Follow these steps to run the Instagram Clone App on your local machine:
 3. Scan the QR code displayed in the terminal or Expo DevTools in your browser.
 
 4. The app will be compiled and launched on your device.
+
+## Contributing
+We welcome contributions! If you have any bug fixes, features, or improvements, feel free to open an issue or submit a pull request following our contribution guidelines.
+
+### License
+This project is licensed under the MIT License.
